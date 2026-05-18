@@ -110,9 +110,9 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: kratos-rebirth
 
-# Live2D 看板娘配置
+# Live2D 看板娘配置 - 已禁用，使用简单的 emoji 看板娘替代
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
