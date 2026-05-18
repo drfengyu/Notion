@@ -4,10 +4,17 @@
 
 ## [未发布]
 
+### 修改
+- 🎨 更新 Live2D 模型
+  - 从 Hijiki（日本风格）更换为 Shizuku（清纯少女风格）
+  - 安装 live2d-widget-model-shizuku@1.0.5
+
+## [1.0.0] - 2026-05-18
+
 ### 新增
 - ✨ 添加 Live2D 看板娘功能
   - 集成 hexo-helper-live2d 插件
-  - 支持 Hijiki 模型（日本风格角色）
+  - 支持 Shizuku 模型（清纯少女风格）
   - 可在右侧显示，大小为 200x400px
   - 支持点击、拖拽、双击交互
   - 移动设备自适应隐藏
@@ -23,7 +30,7 @@
 ### 修改
 - 🔧 更新 Hexo 配置文件 (_config.yml)
   - 添加 Live2D 配置项
-  - 配置模型为 Hijiki
+  - 配置模型为 Shizuku
   - 设置显示位置和大小
 
 - 🎨 更新 kratos-rebirth 主题
@@ -34,6 +41,7 @@
 - 新增 hexo-helper-live2d@3.1.1
 - 新增 live2d-widget-model-koharu@1.0.5
 - 新增 live2d-widget-model-hijiki@1.0.5
+- 新增 live2d-widget-model-shizuku@1.0.5
 
 ## 项目信息
 

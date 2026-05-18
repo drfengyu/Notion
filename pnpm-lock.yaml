@@ -53,6 +53,9 @@ importers:
       live2d-widget-model-koharu:
         specifier: ^1.0.5
         version: 1.0.5
+      live2d-widget-model-shizuku:
+        specifier: ^1.0.5
+        version: 1.0.5
 
 packages:
 
@@ -1326,6 +1329,9 @@ packages:
 
   live2d-widget-model-koharu@1.0.5:
     resolution: {integrity: sha512-tziYYbBvkLFbYmizb6Sij4rF1Vmne9ZJwwD8dljt3QPeWxYBjxuQspzLrFOjMtvCSeE5dncNG7qdnTUb5nD2DQ==}
+
+  live2d-widget-model-shizuku@1.0.5:
+    resolution: {integrity: sha512-keEQR1Bm7HILLjNSIpmg1SGuo4H/ZsGRxnBn0l0BxgEbaHlmEE+Jb5nwhAtnh7PN/SRFE3+Ddk/ciy18sT7rAw==}
 
   live2d-widget@3.1.4:
     resolution: {integrity: sha512-KseUqwiGZLb1SArr+lDaXl8AjXSFI/x/Z+BbDIyPHwElGAktCvhFYw/SDkrI4LL5bnVuGMLKMg6crMTa23KGDQ==}
@@ -3884,6 +3890,8 @@ snapshots:
   live2d-widget-model-hijiki@1.0.5: {}
 
   live2d-widget-model-koharu@1.0.5: {}
+
+  live2d-widget-model-shizuku@1.0.5: {}
 
   live2d-widget@3.1.4:
     dependencies:
