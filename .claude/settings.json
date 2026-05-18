@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh api *)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(d['name'],d['type']\\) for d in data]\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(d['name']\\) for d in data]\")",
+      "Bash(ls \"E:\\\\Project\\\\Github\\\\MVVM-Sample\\\\samples\")",
+      "Read(//e/Project/Github/MVVM-Sample/samples/**)",
+      "Bash(ls \"E:\\\\Project\\\\Github\\\\MVVM-Sample\")",
+      "Read(//e/Project/Github/MVVM-Sample/**)",
+      "Bash(ls \"E:\\\\Project\\\\Github\")",
+      "Read(//e/Project/Github/**)",
+      "Bash(ls \"D:\\\\Download\\\\dotnet-main\")",
+      "Read(//d/Download/dotnet-main/**)",
+      "Bash(awk '{print $NF}')"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(hexo init *)",
+      "Bash(npx hexo *)",
+      "Bash(git *)",
+      "Bash(taskkill *)",
+      "Bash(tasklist)",
+      "Bash(pnpm --version)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm add *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :4000)",
+      "WebSearch",
+      "Bash(curl *)",
+      "Bash(ping *)",
+      "Bash(gh repo *)",
+      "Bash(findstr \"node.exe\")",
+      "Bash(findstr \"4000\")",
+      "Bash(pnpm run *)",
+      "mcp__ide__executeCode",
+      "Bash(hexo server *)",
+      "Bash(findstr \"hexo\")",
+      "Bash(npm run *)",
+      "Bash(cmd *)",
+      "Read(//tmp/dotnet/src/**)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
