@@ -20,6 +20,18 @@ pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
+# Security - Content Security Policy
+# 允许 Live2D 等库使用 eval()
+csp:
+  enable: true
+  policy:
+    default-src: "'self'"
+    script-src: "'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net"
+    style-src: "'self' 'unsafe-inline' https://cdn.jsdelivr.net"
+    img-src: "'self' data: https:"
+    font-src: "'self' https://cdn.jsdelivr.net"
+    connect-src: "'self' https:"
+
 # Directory
 source_dir: source
 public_dir: public
