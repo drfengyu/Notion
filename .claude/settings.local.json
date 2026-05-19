@@ -28,7 +28,11 @@
       "Bash(cmd *)",
       "Read(//tmp/dotnet/src/**)",
       "Read(//tmp/**)",
-      "Bash(npx skills *)"
+      "Bash(npx skills *)",
+      "Bash(git rm *)"
+    ],
+    "additionalDirectories": [
+      "e:\\Project\\Github\\Notion\\.git\\modules\\themes"
     ]
   }
 }
