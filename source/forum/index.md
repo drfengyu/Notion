@@ -1,7 +1,7 @@
 ---
 title: 论坛
 date: 2026-05-19
-layout: forum/index
+layout: forum/simple
 comments: false
 ---
 
