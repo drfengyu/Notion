@@ -17,7 +17,6 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-helper-live2d": "^3.1.1",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^7.0.0",
     "hexo-renderer-pug": "^3.0.0",
@@ -25,8 +24,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-util": "^4.0.0",
-    "live2d-widget-model-hijiki": "^1.0.5",
-    "live2d-widget-model-koharu": "^1.0.5",
-    "live2d-widget-model-shizuku": "^1.0.5"
+    "live2d-widget": "^3.1.4",
+    "live2d-widgets": "^1.0.0"
   }
 }

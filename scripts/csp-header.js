@@ -6,8 +6,22 @@ hexo.extend.filter.register('after_generate', function() {
   const path = require('path');
   const publicDir = hexo.public_dir;
 
-  // CSP 策略
-  const cspPolicy = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://v.api.aa1.cn; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https:; frame-ancestors 'self'";
+  // 从配置中读取 CSP 策略，如果未启用则不添加
+  if (!hexo.config.csp || !hexo.config.csp.enable) {
+    return;
+  }
+
+  let cspPolicy = '';
+  if (hexo.config.csp.policy) {
+    const policy = hexo.config.csp.policy;
+    const directives = [];
+    for (const [key, value] of Object.entries(policy)) {
+      directives.push(`${key} ${value}`);
+    }
+    cspPolicy = directives.join('; ');
+  } else {
+    return;
+  }
 
   // 递归处理所有 HTML 文件
   function processDir(dir) {
@@ -23,17 +37,24 @@ hexo.extend.filter.register('after_generate', function() {
             processDir(filePath);
           } else if (file.endsWith('.html')) {
             let content = fs.readFileSync(filePath, 'utf8');
+            const cspMetaTag = `<meta http-equiv="Content-Security-Policy" content="${cspPolicy}">`;
 
-            // 检查是否已有 CSP meta 标签
-            if (!content.includes('Content-Security-Policy')) {
+            // 检查是否已有 CSP meta 标签，有则替换，没有则添加
+            if (content.includes('Content-Security-Policy')) {
+              // 替换现有的 CSP meta 标签
+              content = content.replace(
+                /<meta\s+http-equiv="Content-Security-Policy"[^>]*>/i,
+                cspMetaTag
+              );
+            } else {
               // 在 <head> 后面添加 CSP meta 标签
               content = content.replace(
                 /<head>/i,
-                `<head>\n  <meta http-equiv="Content-Security-Policy" content="${cspPolicy}">`
+                `<head>\n  ${cspMetaTag}`
               );
-
-              fs.writeFileSync(filePath, content, 'utf8');
             }
+
+            fs.writeFileSync(filePath, content, 'utf8');
           }
         } catch (err) {
           // 忽略单个文件的错误

@@ -27,7 +27,8 @@
       "Bash(npm run *)",
       "Bash(cmd *)",
       "Read(//tmp/dotnet/src/**)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(npx skills *)"
     ]
   }
 }

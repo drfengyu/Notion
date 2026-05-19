@@ -14,7 +14,10 @@
       "Read(//e/Project/Github/**)",
       "Bash(ls \"D:\\\\Download\\\\dotnet-main\")",
       "Read(//d/Download/dotnet-main/**)",
-      "Bash(awk '{print $NF}')"
+      "Bash(awk '{print $NF}')",
+      "Bash(hexo clean *)",
+      "Bash(hexo generate *)",
+      "Bash(unzip -q live2d-widget.zip)"
     ]
   }
 }

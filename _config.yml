@@ -21,16 +21,15 @@ pretty_urls:
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Security - Content Security Policy
-# 允许 Live2D 等库使用 eval()
 csp:
   enable: true
   policy:
     default-src: "'self'"
-    script-src: "'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net"
-    style-src: "'self' 'unsafe-inline' https://cdn.jsdelivr.net"
+    script-src: "'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://fastly.jsdelivr.net https://v.api.aa1.cn"
+    style-src: "'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fastly.jsdelivr.net"
     img-src: "'self' data: https:"
-    font-src: "'self' https://cdn.jsdelivr.net"
-    connect-src: "'self' https:"
+    font-src: "'self' data:"
+    connect-src: "'self' https://mcs.zijieapi.com"
 
 # Directory
 source_dir: source
@@ -109,26 +108,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: kratos-rebirth
-
-# Live2D 看板娘配置 - 已禁用，使用简单的 emoji 看板娘替代
-live2d:
-  enable: false
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  debug: false
-  model:
-    use: live2d-widget-model-shizuku
-  display:
-    position: right
-    width: 200
-    height: 400
-  mobile:
-    show: true
-  react:
-    opacity: 0.7
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
