@@ -1,7 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "public",
-  "installCommand": "npm install",
-  "framework": null,
-  "devCommand": null
+  "framework": null
 }
