@@ -47,7 +47,10 @@
       "Bash(cd e:/Project/Github/Notion && rm -rf themes/kratos-rebirth .git/modules/themes/kratos-rebirth && git config --file .git/config --remove-section submodule.themes/kratos-rebirth && git config --file .gitmodules --remove-section submodule.themes/kratos-rebirth && git add .gitmodules && git status)",
       "Bash(mv source/index.md source/_index.md)",
       "Bash(rm -rf public)",
-      "Bash(mv source/_index.md source/index.md)"
+      "Bash(mv source/_index.md source/index.md)",
+      "Bash(gh run *)",
+      "Bash(rm -f pnpm-lock.yaml)",
+      "Bash(rm -rf node_modules)"
     ],
     "additionalDirectories": [
       "e:\\Project\\Github\\Notion\\.git\\modules\\themes",
