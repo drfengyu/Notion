@@ -44,7 +44,10 @@
       "Bash([ -f \"source/js/live2d-widget/$f\" ])",
       "Bash(mv source/js/live2d-widget/__TRACKED_VAR__ docs/)",
       "Bash(cd e:/Project/Github/Notion && git submodule deinit -f themes/kratos-rebirth && rm -rf .git/modules/themes/kratos-rebirth && git rm -f themes/kratos-rebirth && git status)",
-      "Bash(cd e:/Project/Github/Notion && rm -rf themes/kratos-rebirth .git/modules/themes/kratos-rebirth && git config --file .git/config --remove-section submodule.themes/kratos-rebirth && git config --file .gitmodules --remove-section submodule.themes/kratos-rebirth && git add .gitmodules && git status)"
+      "Bash(cd e:/Project/Github/Notion && rm -rf themes/kratos-rebirth .git/modules/themes/kratos-rebirth && git config --file .git/config --remove-section submodule.themes/kratos-rebirth && git config --file .gitmodules --remove-section submodule.themes/kratos-rebirth && git add .gitmodules && git status)",
+      "Bash(mv source/index.md source/_index.md)",
+      "Bash(rm -rf public)",
+      "Bash(mv source/_index.md source/index.md)"
     ],
     "additionalDirectories": [
       "e:\\Project\\Github\\Notion\\.git\\modules\\themes",
