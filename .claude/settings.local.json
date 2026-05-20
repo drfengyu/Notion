@@ -41,7 +41,6 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Closed: {d.get\\(\\\\\"state\\\\\"\\)}'\\)\")",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('full_name','FAILED'\\)\\)\")",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('full_name','FAILED: '+str\\(d.get\\('message',''\\)\\)\\)\\)\")",
-      "Bash(rm -f tmp_test.json && echo '{\"message\":\"test\"}' > /tmp/fork_body.json && curl -sL -X POST \"https://api.github.com/repos/Candinya/Kratos-Rebirth/forks\" -H \"Authorization: Bearer \" -H \"Accept: application/vnd.github+json\" -H \"Content-Type: application/json\" -d @/tmp/fork_body.json | head -5)",
       "Bash([ -f \"source/js/live2d-widget/$f\" ])",
       "Bash(mv source/js/live2d-widget/__TRACKED_VAR__ docs/)"
     ],
