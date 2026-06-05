@@ -1,0 +1,19 @@
+{
+  "_comment": "已推送过的 GitHub 仓库去重清单。每天定时任务读取此文件，剔除已推送仓库，只推新仓库，推完追加。Hexo 不渲染下划线前缀文件。",
+  "repos": [
+    "chopratejas/headroom",
+    "NousResearch/hermes-agent",
+    "affaan-m/ECC",
+    "PaddlePaddle/PaddleOCR",
+    "github/spec-kit",
+    "NVIDIA/cosmos",
+    "lfnovo/open-notebook",
+    "Open-LLM-VTuber/Open-LLM-VTuber",
+    "jwasham/coding-interview-university",
+    "github/copilot-sdk",
+    "aquasecurity/trivy",
+    "openclaw/openclaw-windows-node",
+    "reconurge/flowsint",
+    "mvanhorn/last30days-skill"
+  ]
+}
