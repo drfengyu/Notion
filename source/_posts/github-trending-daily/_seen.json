@@ -14,6 +14,16 @@
     "aquasecurity/trivy",
     "openclaw/openclaw-windows-node",
     "reconurge/flowsint",
-    "mvanhorn/last30days-skill"
+    "mvanhorn/last30days-skill",
+    "RyanCodrai/turbovec",
+    "roboflow/supervision",
+    "aaif-goose/goose",
+    "Panniantong/Agent-Reach",
+    "refactoringhq/tolaria",
+    "TapXWorld/ChinaTextbook",
+    "google/skills",
+    "CopilotKit/CopilotKit",
+    "luongnv89/claude-howto",
+    "santifer/career-ops"
   ]
 }
