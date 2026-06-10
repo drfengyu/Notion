@@ -24,6 +24,12 @@
     "google/skills",
     "CopilotKit/CopilotKit",
     "luongnv89/claude-howto",
-    "santifer/career-ops"
+    "santifer/career-ops",
+    "phuryn/pm-skills",
+    "Andyyyy64/whichllm",
+    "addyosmani/agent-skills",
+    "yikart/AiToEarn",
+    "openai/plugins",
+    "maziyarpanahi/openmed"
   ]
 }
