@@ -30,6 +30,15 @@
     "addyosmani/agent-skills",
     "yikart/AiToEarn",
     "openai/plugins",
-    "maziyarpanahi/openmed"
+    "maziyarpanahi/openmed",
+    "apple/container",
+    "harry0703/MoneyPrinterTurbo",
+    "obra/superpowers",
+    "ruvnet/RuView",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "masterking32/MasterDnsVPN",
+    "soxoj/maigret",
+    "FareedKhan-dev/train-llm-from-scratch",
+    "activeloopai/hivemind"
   ]
 }
