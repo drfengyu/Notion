@@ -31,8 +31,8 @@
 8. 本地验证：Bash 执行 `cd "E:/Project/Github/Notion" && npx hexo generate 2>&1 | tail -5`，确认无 ERROR。
 
 9. 提交推送：Bash 执行
-   `cd "E:/Project/Github/Notion" && git add source/_posts/github-trending-daily/ && git commit -m "post: GitHub Trending 日报 {日期}" && git push github master`
-   git 凭据由 Windows 凭据管理器托管，无需输入密码。
+   `cd "E:/Project/Github/Notion" && git add source/_posts/github-trending-daily/ && git commit -m "post: GitHub Trending 日报 {日期}" && git push origin master`
+   只推送到 GitHub (origin)，不推送 Gitee。git 凭据由 Windows 凭据管理器托管，无需输入密码。
 
 10. 结束时简要说明：今天推送了哪些新仓库、文章地址（https://notion.fuwari.fun/{年}/{月}/{日}/github-trending-daily/{日期}/）、各步骤成败。
 

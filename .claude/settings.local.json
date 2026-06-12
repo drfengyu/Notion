@@ -50,7 +50,17 @@
       "Bash(mv source/_index.md source/index.md)",
       "Bash(gh run *)",
       "Bash(rm -f pnpm-lock.yaml)",
-      "Bash(rm -rf node_modules)"
+      "Bash(rm -rf node_modules)",
+      "Bash(powershell -Command \"Get-Process ServiceShell -ErrorAction SilentlyContinue | Select-Object Id, ProcessName, Path, WorkingSet64, CPU, StartTime\")",
+      "Bash(powershell -Command \"Stop-Process -Name ServiceShell -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; Get-Process ServiceShell -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -Command \"Get-Process | Sort-Object WS -Descending | Select-Object -First 5 Name, WS | Format-Table\")",
+      "Bash(powershell -Command \"Stop-Service -Name 'DellUpdateService' -Force -ErrorAction SilentlyContinue; Set-Service -Name 'DellUpdateService' -StartupType Disabled -ErrorAction SilentlyContinue; Get-Service -Name 'DellUpdateService' | Select-Object Name, DisplayName, Status, StartType\")",
+      "Bash(sc query *)",
+      "Bash(findstr /i \"dell\")",
+      "Bash(sc config *)",
+      "Bash(sc stop *)",
+      "Bash(powershell -Command \"Get-CimInstance Win32_OperatingSystem | Select-Object FreePhysicalMemory, TotalVisibleMemorySize\")",
+      "Bash(powershell -Command \"Get-Process | Sort-Object WS -Descending | Select-Object -First 5 Name, WS\")"
     ],
     "additionalDirectories": [
       "e:\\Project\\Github\\Notion\\.git\\modules\\themes",
