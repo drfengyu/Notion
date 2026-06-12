@@ -39,6 +39,15 @@
     "masterking32/MasterDnsVPN",
     "soxoj/maigret",
     "FareedKhan-dev/train-llm-from-scratch",
-    "activeloopai/hivemind"
+    "activeloopai/hivemind",
+    "msitarzewski/agency-agents",
+    "NVIDIA/SkillSpector",
+    "hexo-ai/sia",
+    "bannedbook/fanqiang",
+    "kenn-io/agentsview",
+    "alchaincyf/zhangxuefeng-skill",
+    "chatwoot/chatwoot",
+    "restic/restic",
+    "mattermost/mattermost"
   ]
 }
