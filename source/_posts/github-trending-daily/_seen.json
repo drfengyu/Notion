@@ -52,6 +52,8 @@
     "iptv-org/iptv",
     "microsoft/PowerToys",
     "LMCache/LMCache",
-    "music-assistant/server"
+    "music-assistant/server",
+    "andrewyng/aisuite",
+    "swc-project/swc"
   ]
 }
