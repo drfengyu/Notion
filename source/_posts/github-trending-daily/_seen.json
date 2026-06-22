@@ -54,6 +54,13 @@
     "LMCache/LMCache",
     "music-assistant/server",
     "andrewyng/aisuite",
-    "swc-project/swc"
+    "swc-project/swc",
+    "palmier-io/palmier-pro",
+    "mattpocock/skills",
+    "penpot/penpot",
+    "DeusData/codebase-memory-mcp",
+    "calesthio/OpenMontage",
+    "ZhuLinsen/daily_stock_analysis",
+    "tursodatabase/turso"
   ]
 }
