@@ -113,3 +113,13 @@ theme: kratos-rebirth
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# RSS 订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# 站点地图（SEO）
+sitemap:
+  path: sitemap.xml
