@@ -1,39 +1,25 @@
-你是一个无头自动化任务。请独立完成「每日 GitHub Trending 去重推送到 Hexo 博客」，全程不要向用户提问，遇到可自动决策的情况自行决定。严格按以下步骤执行：
+# 每日 GitHub Trending 推送 · 架构说明
 
-【路径约定】
-- Hexo 博客仓库根目录：E:/Project/Github/Notion
-- 文章目录：E:/Project/Github/Notion/source/_posts/github-trending-daily/
-- 去重清单：E:/Project/Github/Notion/source/_posts/github-trending-daily/_seen.json （JSON，含 repos 数组，是历史已推送过的所有仓库全名 owner/repo）
+每日 10:03（Asia/Shanghai）抓取 GitHub Trending，去重后生成中文日报文章并推送到本仓库 master 分支。
 
-【步骤】
-1. 确定今天日期（格式 YYYY-MM-DD）。可用 Bash 执行 `date +%F` 获取。
+## 双保险调度
 
-2. 抓取榜单：用 Bash 执行
-   `curl -s --max-time 40 -x socks5://127.0.0.1:10808 "https://github.com/trending" -o /tmp/trending.html -w "%{http_code}"`
-   （经 v2rayN 的 socks5 代理，本机直连 github 会被网络限制拦截）。
-   若状态非 200 或文件为空，重试一次；仍失败则用 WebSearch 搜「GitHub trending today」兜底，并在文章中注明数据来源已降级。
+| 层级 | 触发 | 执行者 | 产出 |
+|---|---|---|---|
+| 主：Qoder 自动化「GitHub Trending 每日推送」 | 每天 10:03 | Qoder AI 会话（完整流程：抓取→解析→去重→中文简介+亮点润色→构建→推送） | 中文润色版日报 |
+| 兜底：Windows 计划任务 `\GitHub-Trending-Daily` | 每天 13:03 | `run.cmd` → `daily_trending.py`（纯 Python，无 AI 依赖） | 英文原文版日报（仅当主任务未运行时生效） |
 
-3. 解析：用 Windows 原生 python 解析 HTML（注意 bash 的 /tmp/trending.html 实际路径是 C:\Users\ADMINI~1\AppData\Local\Temp\trending.html）。按 `article class="Box-row"` 切分，每条提取：owner/repo（从 h2 内 a 标签 href）、语言（itemprop="programmingLanguage"）、总 stars（/stargazers 链接内数字）、当日新增 stars（"N stars today"）、描述（p.col-9）。输出为 JSON 到临时文件。务必用 encoding='utf-8' 读写，避免 GBK 报错；不要把含 emoji 的内容 print 到控制台。
+兜底逻辑：Python 脚本幂等——若当日文章已存在则直接跳过。Qoder 正常运行时兜底任务空转；Qoder 未开机时兜底任务保证不断更。
 
-4. 去重：读取 _seen.json 的 repos 列表，从抓取结果中剔除所有已出现过的仓库，只保留全新仓库。
+## 关键路径
 
-5. 选取：从新仓库中按当日新增 star 从高到低选至少 5 个；不足 5 个则尽量多选，并在文章注明今日新增仓库较少。若一个新仓库都没有，则文章正文写明「今日 Trending 榜单中暂无未推送过的新仓库」，仍照常生成并提交（保持每日连续）。
+- Qoder 自动化任务（权威 prompt 存于 Qoder「Automations」面板）：每天 10:03
+- `run.cmd`：Windows 计划任务入口 → `daily_trending.py`
+- `daily_trending.py`：抓取（socks5://127.0.0.1:10808，直连被网络拦截）→ 解析 → 去重 → 生成 → `npx hexo generate` 校验 → git 提交推送 origin master
+- `parse_trending.py`：HTML → JSON 解析（供 AI 会话复用）
+- 日志：`logs/{日期}.log`；去重清单：`source/_posts/github-trending-daily/_seen.json`
 
-6. 写文章：用 Write 写入 E:/Project/Github/Notion/source/_posts/github-trending-daily/{今天日期}.md。文件开头必须是 Hexo front-matter（顶格，三个连字符）：
-   title: GitHub Trending 日报 · {日期}
-   date: {日期}
-   tags 包含 GitHub、Trending、开源
-   categories 为 GitHub 日报
-   front-matter 之后是正文。每个仓库一节：序号、[owner/repo](https://github.com/owner/repo) 链接、语言、总 star、+当日新增/天、一句话中文简介（把英文描述翻译/概括为中文）、一句中文亮点。正文第一段（数据来源说明）之后单独加一行 `<!-- more -->`。
+## 历史备注
 
-7. 更新清单：把本次新推送的仓库全名追加进 _seen.json 的 repos 数组（保留原有全部条目，去重后写回），用 Write 覆盖。
-
-8. 本地验证：Bash 执行 `cd "E:/Project/Github/Notion" && npx hexo generate 2>&1 | tail -5`，确认无 ERROR。
-
-9. 提交推送：Bash 执行
-   `cd "E:/Project/Github/Notion" && git add source/_posts/github-trending-daily/ && git commit -m "post: GitHub Trending 日报 {日期}" && git push origin master`
-   只推送到 GitHub (origin)，不推送 Gitee。git 凭据由 Windows 凭据管理器托管，无需输入密码。
-
-10. 结束时简要说明：今天推送了哪些新仓库、文章地址（https://notion.fuwari.fun/{年}/{月}/{日}/github-trending-daily/{日期}/）、各步骤成败。
-
-若任何关键步骤失败（抓取、构建、推送），在输出中明确写出失败原因，不要静默失败。
+- 2026-06-26 ~ 2026-09-19 断更：原方案依赖无头 `claude` + cc-switch 本地网关（127.0.0.1:15721），网关停止且上游 token 失效。
+- 本目录曾位于 `scripts/daily-trending/`，因 hexo 会把 `scripts/` 下所有文件当 JS 插件加载而迁至 `automation/`。
