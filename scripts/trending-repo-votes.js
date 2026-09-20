@@ -53,9 +53,8 @@ var JS = '<script>(function(){' +
   '});' +
   'var s=document.querySelector(".repo-vote-summary");' +
   'if(!s)return;' +
-  'var total=Object.keys(votes).length;' +
   'if(voted.length){' +
-  's.innerHTML="♥ 本文你已标记 <b>"+voted.length+"</b> / "+btns.length+" 个有价值的仓库（累计标记 "+total+" 个）："+' +
+  's.innerHTML="♥ 本文你已标记 <b>"+voted.length+"</b> / "+btns.length+" 个有价值的仓库："+' +
   'voted.map(function(r){return "<code>"+r+"</code>"}).join("、");' +
   '}else{' +
   's.innerHTML="♡ 觉得哪个仓库有价值？点仓库标题下方的「有价值」标记，以后再看本文就能一眼找回。";' +
