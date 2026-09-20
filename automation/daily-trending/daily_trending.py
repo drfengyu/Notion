@@ -75,7 +75,7 @@ def parse_trending(html_text):
         if lm:
             lang = lm.group(1).strip()
         total = None
-        sm = re.search(r'href="/' + re.escape(full) + r'/stargazers"[^>]*>\s*([\d,]+)', row)
+        sm = re.search(r'href="/' + re.escape(full) + r'/stargazers"[^>]*>.*?([\d,]+)\s*<', row, re.S)
         if sm:
             total = sm.group(1).replace(",", "")
         today = 0
