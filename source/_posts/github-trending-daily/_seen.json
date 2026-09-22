@@ -3,6 +3,7 @@
     "Andyyyy64/whichllm",
     "BuilderIO/agent-native",
     "CopilotKit/CopilotKit",
+    "Crosstalk-Solutions/project-nomad",
     "DeusData/codebase-memory-mcp",
     "FareedKhan-dev/train-llm-from-scratch",
     "Fission-AI/OpenSpec",
@@ -28,6 +29,7 @@
     "addyosmani/agent-skills",
     "affaan-m/ECC",
     "ahmedkhaleel2004/gitdiagram",
+    "akitaonrails/ai-memory",
     "alchaincyf/zhangxuefeng-skill",
     "alibaba/open-code-review",
     "alibaba/page-agent",
@@ -73,6 +75,7 @@
     "msitarzewski/agency-agents",
     "music-assistant/server",
     "mvanhorn/last30days-skill",
+    "mvt-project/mvt",
     "obra/superpowers",
     "openai/plugins",
     "openclaw/openclaw-windows-node",
@@ -104,6 +107,7 @@
     "x1xhlol/system-prompts-and-models-of-ai-tools",
     "xbtlin/ai-berkshire",
     "yikart/AiToEarn",
-    "yynxxxxx/Codex-X"
+    "yynxxxxx/Codex-X",
+    "zhouxiaoka/autoclip"
   ]
 }
