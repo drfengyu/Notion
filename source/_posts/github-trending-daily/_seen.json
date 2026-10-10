@@ -1,6 +1,7 @@
 {
   "repos": [
     "Andyyyy64/whichllm",
+    "BerriAI/litellm",
     "BuilderIO/agent-native",
     "CopilotKit/CopilotKit",
     "Crosstalk-Solutions/project-nomad",
@@ -21,6 +22,7 @@
     "Open-LLM-VTuber/Open-LLM-VTuber",
     "PaddlePaddle/PaddleOCR",
     "Panniantong/Agent-Reach",
+    "Robbyant/lingbot-map",
     "RyanCodrai/turbovec",
     "TNT-Likely/PanWatch",
     "TapXWorld/ChinaTextbook",
@@ -125,6 +127,7 @@
     "tradesdontlie/tradingview-mcp",
     "trycua/cua",
     "tursodatabase/turso",
+    "twostraws/SwiftUI-Agent-Skill",
     "vercel-labs/json-render",
     "x1xhlol/system-prompts-and-models-of-ai-tools",
     "xbtlin/ai-berkshire",
