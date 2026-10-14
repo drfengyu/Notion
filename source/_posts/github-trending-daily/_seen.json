@@ -65,6 +65,7 @@
     "cloudflare/security-audit-skill",
     "coder/coder",
     "davila7/claude-code-templates",
+    "debpalash/VoiceStudio",
     "docling-project/docling",
     "dream-num/univer",
     "every-app/open-seo",
@@ -137,8 +138,10 @@
     "tursodatabase/turso",
     "twostraws/SwiftUI-Agent-Skill",
     "vercel-labs/json-render",
+    "vercel-labs/skills",
     "x1xhlol/system-prompts-and-models-of-ai-tools",
     "xbtlin/ai-berkshire",
+    "xtool-org/xtool",
     "yikart/AiToEarn",
     "yynxxxxx/Codex-X",
     "zhouxiaoka/autoclip"
